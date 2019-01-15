@@ -1,7 +1,7 @@
 terraform {
  backend "gcs" {
-   bucket  = "${var.backend_bucket_name}"
+   bucket  = "andela-tech-infra-admin"
    prefix  = "vault/terraform/state"
-   project = "${var.backend_project_name}"
+   project = "andela-tech-infra-admin"
  }
 }
