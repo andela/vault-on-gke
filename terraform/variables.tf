@@ -259,19 +259,3 @@ Number of recovery keys required for quorum. This must be less than or equal
 to "vault_recovery_keys".
 EOF
 }
-
-variable "backend_bucket_name" {
-  type    = "string"
-
-  description = <<EOF
-Name of google cloud storage bucket to configure for backend
-EOF
-}
-
-variable "backend_project_name" {
-  type    = "string"
-
-  description = <<EOF
-Name of google cloud project associated with bucket used for backend
-EOF
-}
