@@ -259,3 +259,9 @@ Number of recovery keys required for quorum. This must be less than or equal
 to "vault_recovery_keys".
 EOF
 }
+
+variable "project_read_users" {
+  type = "list"
+
+  default = []
+}

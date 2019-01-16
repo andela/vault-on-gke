@@ -46,6 +46,12 @@ resource "google_project_iam_member" "service-account-custom" {
   role    = "${element(var.service_account_custom_iam_roles, count.index)}"
   member  = "serviceAccount:${google_service_account.vault-server.email}"
 }
+resource "google_project_iam_binding" "project" {
+  project = "${google_project.vault.project_id}"
+  role    = "roles/viewer"
+
+  members = "${var.project_read_users}"
+}
 
 # Enable required services on the project
 resource "google_project_service" "service" {
