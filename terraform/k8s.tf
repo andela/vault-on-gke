@@ -18,8 +18,8 @@ resource "kubernetes_secret" "vault-tls" {
   }
 
   data {
-    "vault.crt" = "${tls_locally_signed_cert.vault.cert_pem}\n${tls_self_signed_cert.vault-ca.cert_pem}"
-    "vault.key" = "${tls_private_key.vault.private_key_pem}"
+    "vault.crt" = "${base64encode("${file("${var.tls_crt_path}")}")}"
+    "vault.key" = "${base64encode("${file("${var.tls_key_path}")}")}"
   }
 }
 

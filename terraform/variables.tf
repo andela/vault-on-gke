@@ -265,3 +265,17 @@ variable "project_read_users" {
 
   default = []
 }
+
+variable "tls_key_path" {
+  type = "string"
+   description = <<EOF
+Path to the TLS key
+EOF
+}
+
+variable "tls_crt_path" {
+  type = "string"
+   description = <<EOF
+Path to the TLS crt
+EOF
+}
