@@ -18,8 +18,8 @@ resource "kubernetes_secret" "vault-tls" {
   }
 
   data {
-    "vault.crt" = "${base64encode("${file("${var.tls_crt_path}")}")}"
-    "vault.key" = "${base64encode("${file("${var.tls_key_path}")}")}"
+    "vault.crt" = "${file("${var.tls_crt_path}")}"
+    "vault.key" = "${file("${var.tls_key_path}")}"
   }
 }
 
