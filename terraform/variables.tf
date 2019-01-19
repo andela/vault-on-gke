@@ -279,24 +279,3 @@ variable "tls_crt_path" {
 Path to the TLS crt
 EOF
 }
-
-# variable "dnsimple_token" {
-#   type = "string"
-#    description = <<EOF
-# api-token generated for dnsimple.com
-# EOF
-# }
-
-# variable "dnsimple_account" {
-#   type = "string"
-#    description = <<EOF
-# dns-simple account id
-# EOF
-# }
-
-# variable "dnsimple_domain" {
-#   type = "string"
-#    description = <<EOF
-# specify domain managed in dnsimple
-# EOF
-# }
