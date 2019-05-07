@@ -1,5 +1,5 @@
 # This file contains all the interactions with Google Cloud
-provider "google" {
+provider "google-beta" {
   region  = "${var.region}"
   project = "${var.project}"
 }
@@ -225,6 +225,7 @@ data "google_container_engine_versions" "versions" {
 
 # Create the GKE cluster
 resource "google_container_cluster" "vault" {
+  provider = "google-beta"
   name    = "vault"
   project = "${google_project.vault.project_id}"
   region  = "${var.region}"
